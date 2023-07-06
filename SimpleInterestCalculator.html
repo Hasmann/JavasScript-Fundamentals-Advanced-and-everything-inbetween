@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIT-CALCULATOR</title>
+</head>
+
+<style>
+    .header{
+        color: gainsboro;
+        font-family: monospace;
+        font-weight: lighter;
+        text-align: center;
+        text-decoration: none;
+        font-size: 55px;
+    }
+.outerContainer{
+    background-color: black;
+    border:2px solid gainsboro;
+    border-radius: 10px;
+    height: 400px;
+    width: 350px;
+    align-items: center;
+    margin-left: 550px;
+    
+}
+label{
+    color: whitesmoke;
+    font-family:monospace;
+    font-size: 15px;
+}
+input{
+    width: 200px;
+    height: 22px;
+    border-radius: 3px;
+    outline: none;
+  border: 2px solid gainsboro;
+}
+
+.sub{
+    width:150px;
+    height: 30px;
+    border-radius:3px;
+    background-color: white;
+    color: black;
+    border: 2px solid silver;
+    margin-left: 100px;
+    font-size: 15px;
+    transition: all 1s ease-in-out;
+}
+.sub:hover{
+    background-color:gainsboro;
+    cursor: pointer;
+}
+
+#con{
+    padding: 30px;
+}
+
+p{
+    text-align: center;
+    font-family: monospace;
+    font-size: 30px;
+    color: grey;
+}
+
+</style>
+<body>
+    
+<h1 class="header">CALCULATE YOUR SIMPLE INTEREST</h1>
+
+<div class="outerContainer">
+
+
+    <div id="con">
+    <label>Pcpl:</label>
+    <input id="pcpl" type="number"" name="principal" placeholder="Enter Your Principal" required>
+    <br>
+</div>
+
+<div  id="con">
+    <label>Rate:</label>
+    <input id="rate" type="number" name="rate" placeholder="Enter Your Rate" required>
+    <br>
+</div>
+
+
+<div  id="con">
+    <label>Time:</label>
+    <input id="time" type="number" name="time" placeholder="Enter Your Time" required>
+      <br>
+    </div>
+
+<div>
+    <input onclick="getci()" class="sub" type="submit" value="Submit">
+</div>
+
+
+<p id="ans">0</p>
+
+</div>
+
+</body>
+
+<script>
+
+ 
+
+function getci(){
+
+var pcpl = Number(document.getElementById("pcpl").value);
+var rate = Number(document.getElementById("rate").value);
+var time = Number(document.getElementById("time").value);
+
+var answer = pcpl * rate * time;
+
+document.getElementById("ans").innerHTML=answer;
+
+}
+
+</script>
+
+</html>
